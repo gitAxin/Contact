@@ -1,6 +1,7 @@
 
 
 #define MAX 1000
+#define DEFAULT_CAPACITY 3
 #define MAX_NAME 20
 #define MAX_SEX 5
 #define MAX_TEL 12
@@ -27,8 +28,9 @@ struct PInfo
 
 //通迅录
 struct Contact {
-	struct PInfo data[MAX];//通迅录所有数据
+	struct PInfo* data;//通迅录所有数据
 	int size;//通迅录条数
+	int capacity;//通讯录数据容量
 };
 
 //初始化通迅录
@@ -45,3 +47,5 @@ void del(struct Contact* ps);
 void modify(struct Contact* ps);
 //排序
 void sort(struct Contact* ps);
+//销毁通讯录
+void destroy(struct Contact* ps);
